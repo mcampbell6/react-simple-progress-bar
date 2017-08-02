@@ -1,4 +1,11 @@
-/**
- * Created by n0235960 on 7/13/17.
- */
-console.log('hello world')
+
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Demo from './demo'
+
+document.addEventListener('DOMContentLoaded', function() {
+    ReactDOM.render(
+        React.createElement(Demo),
+        document.getElementById('mount')
+    )
+})
