@@ -17,9 +17,7 @@ export default class ProgressBar extends Component {
         }
     }
 
-
     render() {
-        console.log(this.state.primaryColor)
         return (
             <div className="progress-bar-wrapper" style={{"background-color": this.state.primaryColor}}>
                 <div className="progress-bar-container">
