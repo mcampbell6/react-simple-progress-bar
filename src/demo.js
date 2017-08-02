@@ -13,7 +13,6 @@ class demo extends React.Component {
     }
 
     render() {
-
         return (
             <div>
                 <ProgressBar sections={this.state.sections} current={this.state.step} primaryColor="#002663" secondaryColor="#EAAD2E" tertiaryColor="white"/>
