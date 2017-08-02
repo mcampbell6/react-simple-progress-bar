@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 
 export default class NodeCircle extends Component {
     render() {
@@ -10,5 +11,10 @@ export default class NodeCircle extends Component {
 
         )
     }
+}
 
+NodeCircle.propTypes = {
+    stroke: PropTypes.string.isRequired,
+    fill: PropTypes.string.isRequired,
+    textColor: PropTypes.string.isRequired
 }

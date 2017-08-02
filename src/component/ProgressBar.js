@@ -1,12 +1,8 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 import 'css-loader!./ProgressBar.css'
 import NodeCircle from "./NodeCircle"
 
-// this.props.current
-// this.props.sections
-// this.props.primaryColor
-// this.props.secondaryColor
-// this.props.tertiaryColor
 export default class ProgressBar extends Component {
     constructor(props) {
         super(props)
@@ -19,7 +15,7 @@ export default class ProgressBar extends Component {
 
     render() {
         return (
-            <div className="progress-bar-wrapper" style={{"background-color": this.state.primaryColor}}>
+            <div className="progress-bar-wrapper" style={{"background": this.state.primaryColor}}>
                 <div className="progress-bar-container">
                     {this.props.sections.map((section, index) => {
                         const step = index + 1
@@ -83,4 +79,17 @@ export default class ProgressBar extends Component {
             return (<div className="bar-line" style={{"background": this.state.tertiaryColor}}/>)
         }
     }
+}
+
+// this.props.current
+// this.props.sections
+// this.props.primaryColor
+// this.props.secondaryColor
+// this.props.tertiaryColor
+ProgressBar.propTypes = {
+    current: PropTypes.number.isRequired,
+    sections: PropTypes.array.isRequired,
+    primaryColor: PropTypes.string,
+    secondaryColor: PropTypes.string,
+    tertiaryColor: PropTypes.string
 }
