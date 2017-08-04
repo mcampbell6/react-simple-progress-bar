@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import 'css-loader!./ProgressBar.css'
+import './ProgressBar.css'
 import NodeCircle from "./NodeCircle"
 
 export default class ProgressBar extends Component {
@@ -14,6 +14,9 @@ export default class ProgressBar extends Component {
     }
 
     render() {
+        if(!this.props.current || !this.props.sections){
+            return null
+        }
         return (
             <div className="progress-bar-wrapper" style={{"background": this.state.primaryColor}}>
                 <div className="progress-bar-container">
@@ -35,7 +38,7 @@ export default class ProgressBar extends Component {
         if (current > step) {
             return (
                 <div key={step} className="progress-bar-node">
-                    <NodeCircle stroke={this.state.secondaryColor} fill={this.state.primaryColor} textColor={this.props.secondaryColor}>{step}</NodeCircle>
+                    <NodeCircle stroke={this.state.secondaryColor} fill={this.state.primaryColor} textColor={this.state.secondaryColor}>{step}</NodeCircle>
                     <div className="node-bottom-text complete" style={{"color": this.state.tertiaryColor}}>{section}</div>
                 </div>
             )
@@ -43,7 +46,7 @@ export default class ProgressBar extends Component {
         if (current === step) {
             return (
                 <div key={step} className="progress-bar-node">
-                    <NodeCircle stroke={this.state.secondaryColor} fill={this.state.secondaryColor} textColor={this.props.primaryColor}>{step}</NodeCircle>
+                    <NodeCircle stroke={this.state.secondaryColor} fill={this.state.secondaryColor} textColor={this.state.primaryColor}>{step}</NodeCircle>
                     <div className="node-bottom-text current" style={{"color": this.state.tertiaryColor}}>{section}</div>
                 </div>
             )
@@ -51,7 +54,7 @@ export default class ProgressBar extends Component {
         if (current < step) {
             return (
                 <div key={step} className="progress-bar-node">
-                    <NodeCircle stroke={this.state.tertiaryColor} fill={this.state.primaryColor} textColor={this.props.tertiaryColor}>{step}</NodeCircle>
+                    <NodeCircle stroke={this.state.tertiaryColor} fill={this.state.primaryColor} textColor={this.state.tertiaryColor}>{step}</NodeCircle>
                     <div className="node-bottom-text incomplete" style={{"color": this.state.tertiaryColor}}>{section}</div>
                 </div>
             )

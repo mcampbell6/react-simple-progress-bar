@@ -1,18 +1,10 @@
 .progress-bar-wrapper {
-    height: 120px;
     width: 100%;
     text-align: center;
-    margin: auto;
-    font-size: .9em;
 }
 
 .progress-bar-container {
-    margin-top: 30px;
-    width: 100%;
-    display: inline-block;
-    vertical-align: middle;
-    position: relative;
-
+    padding-bottom: 20px;
 }
 
 .progress-bar-container > .progress-bar-node {
@@ -26,30 +18,19 @@
     }
 
     .progress-bar-node:first-of-type > .node-bottom-text {
-        margin-left: 0;
+        margin-left: 2px;
         text-align: left;
     }
 
     .progress-bar-node:last-of-type > .node-bottom-text {
-        margin-left: -150px;
+        margin-left: -146px;
         text-align: right;
-    }
-}
-
-@media only screen and (min-width: 680px) {
-    .progress-bar-node:first-of-type > .node-bottom-text,
-    .progress-bar-node:last-of-type > .node-bottom-text {
-        width: 180px;
-        margin-left: -75px;
     }
 }
 
 .progress-bar-node > .node-bottom-text {
     width: 180px;
-    margin-left: -75px;
-}
-
-.progress-bar-node > .node-bottom-text {
+    margin-left: -72px;
     position: absolute;
 }
 
@@ -61,5 +42,5 @@
     display: inline-block;
     width: 13vw;
     height: 4px;
-    margin: 0 -1px 13.5px -1px;
+    margin: 0 -1px 16px -1px;
 }

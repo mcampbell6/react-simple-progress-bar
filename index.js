@@ -1,3 +1,7 @@
 'use strict';
 
-module.exports = require('./www/bundle.js');
+/* ---------- imports ---------- */
+import ProgressBar from './src/component/ProgressBar';
+
+/* ---------- exports ---------- */
+export default ProgressBar;

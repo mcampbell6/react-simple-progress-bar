@@ -1,12 +1,15 @@
 const path = require('path')
 module.exports = {
-    context: path.join(__dirname, 'src'),
+    context: path.join(__dirname, './'),
     entry: [
         './index.js'
     ],
     output: {
-        path: path.join(__dirname, 'www'),
-        filename: 'bundle.js'
+        path: path.join(__dirname, 'dist'),
+        filename: 'index.js',
+        library: 'react-simple-progress-bar',
+        libraryTarget: 'umd',
+        umdNamedDefine: true,
     },
     module: {
         rules: [
@@ -16,7 +19,12 @@ module.exports = {
                 use: [
                     'babel-loader'
                 ]
-            }
+            },
+            {
+                test: /\.css$/,
+                exclude: /node_modules/,
+                loader: "style-loader!css-loader"
+            },
         ]
     },
     resolve: {
